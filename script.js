@@ -1,7 +1,12 @@
 function validEmail(str) {
-  //your JS code here.
-}
+  if (!str) return false;
 
-// Do not change the code below.
-const str = prompt("Enter an email address.");
-alert(validEmail(str));
+  const regex = /^[\w.-]+@[\w-]+(\.[\w-]{2,})+$/;
+
+  return regex.test(str);
+}
+console.log(validEmail('abc@example.com'));     
+console.log(validEmail('xyz@abc.com.in'));  
+console.log(validEmail('john.doe@com.'));       
+console.log(validEmail('@example.com'));        
+console.log(validEmail(''));
